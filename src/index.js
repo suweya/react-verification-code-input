@@ -37,6 +37,29 @@ export default class ReactCodeInput extends Component {
 
   onChange = e => {
     console.log('onChange', { e });
+    const { fields } = this.props;
+    const index = parseInt(e.target.dataset.id);
+    const nextIndex = index + 1;
+    const next = this.iRefs[nextIndex];
+    const value = e.target.value;
+    let { values } = this.state;
+    if (value.length > 1) {
+      if (nextIndex < fields) {
+        const split = value.split('');
+        const last = split[split.length - 1];
+        values[nextIndex] = last;
+        this.setState({ values });
+      }
+    } else {
+      values = Object.assign([], values);
+      values[index] = value;
+      this.setState({ values });
+    }
+
+    if (next) {
+      next.current.focus();
+      next.current.select();
+    }
   };
 
   onKeyDown = e => {
@@ -50,12 +73,14 @@ export default class ReactCodeInput extends Component {
       case KEY_CODE.backspace:
         break;
       case KEY_CODE.left:
+        e.preventDefault();
         if (prev) {
           prev.current.focus();
           prev.current.select();
         }
         break;
       case KEY_CODE.right:
+        e.preventDefault();
         if (next) {
           next.current.focus();
           next.current.select();
@@ -78,6 +103,8 @@ export default class ReactCodeInput extends Component {
       <div className={styles['react-code-input']}>
         {values.map((value, index) => (
           <input
+            type="text"
+            pattern="[0-9]*"
             key={`${this.id}-${index}`}
             data-id={index}
             value={value}
