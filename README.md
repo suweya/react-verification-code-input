@@ -15,7 +15,7 @@ npm install --save react-verify-code-input
 ```jsx
 import React, { Component } from 'react';
 
-import ReactCodeInput from 'react-code-input';
+import ReactCodeInput from 'react-verify-code-input';
 
 class Example extends Component {
   render() {

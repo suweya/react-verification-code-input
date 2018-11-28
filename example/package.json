@@ -1,6 +1,6 @@
 {
-  "name": "react-code-input-example",
-  "homepage": "https://suweya.github.io/react-code-input",
+  "name": "react-verify-code-input-example",
+  "homepage": "https://suweya.github.io/react-verify-code-input",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-code-input": "link:.."
+    "react-verify-code-input": "link:.."
   },
   "scripts": {
     "start": "react-scripts start",

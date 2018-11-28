@@ -4,7 +4,7 @@
   "description": "🎉A verification code input",
   "author": "suweya",
   "license": "MIT",
-  "repository": "https://github.com/suweya/react-code-input",
+  "repository": "https://github.com/suweya/react-verify-code-input",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
