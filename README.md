@@ -1,4 +1,4 @@
-# react-verify-code-input
+# react-verification-code-input
 
 > 🎉A verification code input
 
@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save react-verify-code-input
+npm install --save react-verification-code-input
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save react-verify-code-input
 ```jsx
 import React, { Component } from 'react';
 
-import ReactCodeInput from 'react-verify-code-input';
+import ReactCodeInput from 'react-verification-code-input';
 
 class Example extends Component {
   render() {

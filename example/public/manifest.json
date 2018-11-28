@@ -1,6 +1,6 @@
 {
-  "short_name": "react-verify-code-input",
-  "name": "react-verify-code-input",
+  "short_name": "react-verification-code-input",
+  "name": "react-verification-code-input",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

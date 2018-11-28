@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ReactCodeInput from 'react-verify-code-input';
+import ReactCodeInput from 'react-verification-code-input';
 
 const STYLE = {
   width: '350px',
