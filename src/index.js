@@ -14,6 +14,7 @@ const KEY_CODE = {
 export default class ReactCodeInput extends Component {
   static propTypes = {
     onChange: PropTypes.func,
+    onComplete: PropTypes.func,
     fields: PropTypes.number
   };
 
@@ -33,12 +34,26 @@ export default class ReactCodeInput extends Component {
       this.iRefs.push(React.createRef());
     }
     this.id = +new Date();
+
+    this.handleKeys = Array(fields).fill(false);
   }
 
+  triggerChange = (values = this.state.values) => {
+    const { onChange, onComplete, fields } = this.props;
+    const val = values.join('');
+    onChange && onChange(val);
+    if (onComplete && val.length >= fields) {
+      onComplete(val);
+    }
+  };
+
   onChange = e => {
-    console.log('onChange', { e });
-    const { fields } = this.props;
     const index = parseInt(e.target.dataset.id);
+    this.handleKeys[index] = false;
+    if (!e.target.validity.valid) {
+      return;
+    }
+    const { fields } = this.props;
     const nextIndex = index + 1;
     const next = this.iRefs[nextIndex];
     const value = e.target.value;
@@ -60,10 +75,11 @@ export default class ReactCodeInput extends Component {
       next.current.focus();
       next.current.select();
     }
+
+    this.triggerChange(values);
   };
 
   onKeyDown = e => {
-    console.log('onKeyDown', { e });
     const index = parseInt(e.target.dataset.id);
     const prevIndex = index - 1;
     const nextIndex = index + 1;
@@ -71,30 +87,54 @@ export default class ReactCodeInput extends Component {
     const next = this.iRefs[nextIndex];
     switch (e.keyCode) {
       case KEY_CODE.backspace:
+        e.preventDefault();
+        const vals = [...this.state.values];
+        if (this.state.values[index]) {
+          vals[index] = '';
+          this.setState({ values: vals });
+          this.triggerChange();
+        } else if (prev) {
+          vals[prevIndex] = '';
+          prev.current.focus();
+          this.setState({ values: vals });
+          this.triggerChange();
+        }
         break;
       case KEY_CODE.left:
         e.preventDefault();
         if (prev) {
           prev.current.focus();
-          prev.current.select();
         }
         break;
       case KEY_CODE.right:
         e.preventDefault();
         if (next) {
           next.current.focus();
-          next.current.select();
         }
         break;
       case KEY_CODE.up:
       case KEY_CODE.down:
         e.preventDefault();
         break;
+      default:
+        this.handleKeys[index] = true;
+        break;
     }
   };
 
   onKeyUp = e => {
-    console.log('onKeyUp', { e });
+    const index = parseInt(e.target.dataset.id);
+    if (this.handleKeys[index]) {
+      this.handleKeys[index] = false;
+      const next = this.iRefs[index + 1];
+      if (next) {
+        next.current.focus();
+      }
+    }
+  };
+
+  onFocus = e => {
+    e.target.select(e);
   };
 
   render() {
@@ -112,6 +152,7 @@ export default class ReactCodeInput extends Component {
             onChange={this.onChange}
             onKeyDown={this.onKeyDown}
             onKeyUp={this.onKeyUp}
+            onFocus={this.onFocus}
           />
         ))}
       </div>
