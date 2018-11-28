@@ -13,26 +13,29 @@ npm install --save react-code-input
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import ReactCodeInput from 'react-code-input'
+import ReactCodeInput from 'react-code-input';
 
 class Example extends Component {
-  render () {
-    return (
-      <ReactCodeInput />
-    )
+  render() {
+    return <ReactCodeInput />;
   }
 }
 ```
 
 ## PropTypes
 
-| Key        |  Type  | Desc  |
-| :---------:| :------:| :--: |
-| fields     | number | The count of characters  |
-| onChange   | func   | Trigger on character change  |
-| onComplete | func   | Trigger on all character inputs  |
+|     Key     |  Type  |              Desc               |
+| :---------: | :----: | :-----------------------------: |
+|   fields    | number |     The count of characters     |
+|  onChange   |  func  |   Trigger on character change   |
+| onComplete  |  func  | Trigger on all character inputs |
+| filedWidth  | number |           input width           |
+| filedHeight | number |          input height           |
+|  autoFocus  |  bool  | auto focus first input on init  |
+|    title    | string |        code input title         |
+|   loading   |  bool  |        show loading flag        |
 
 ## License
 
