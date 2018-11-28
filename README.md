@@ -1,4 +1,4 @@
-# react-code-input
+# react-verify-code-input
 
 > 🎉A verification code input
 
