@@ -1,5 +1,5 @@
 {
-  "name": "react-code-input",
+  "name": "react-verify-code-input",
   "version": "1.0.0",
   "description": "🎉A verification code input",
   "author": "suweya",
@@ -57,5 +57,15 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "code",
+    "input",
+    "verify",
+    "verifycode",
+    "PIN",
+    "pin-code"
   ]
 }

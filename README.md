@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save react-code-input
+npm install --save react-verify-code-input
 ```
 
 ## Usage
