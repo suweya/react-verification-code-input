@@ -1,4 +1,73 @@
 /* add css styles here (optional) */
 
-.react-code-input {
+.react-code-input-container {
+  position: relative;
+}
+
+.react-code-input > input {
+  border: solid 1px #a8adb7;
+  border-right: none;
+  font-family: 'Lato';
+  font-size: 20px;
+  color: #525461;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.react-code-input > input:last-child {
+  border-right: solid 1px #a8adb7;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.react-code-input > input:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.react-code-input > input:focus {
+  outline: none;
+  border: 1px solid #006fff !important;
+  caret-color: #006fff;
+}
+
+.react-code-input > input:focus + input {
+  border-left: none !important;
+}
+
+.loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.5;
+  filter: blur(0.5px);
+  transition: opacity 0.3s;
+}
+
+.title {
+  margin: 0;
+  height: 20px;
+  padding-bottom: 10px;
+}
+
+.spin {
+  display: inline-block;
+  animation: loadingCircle 1s infinite linear;
+}
+
+@keyframes loadingCircle {
+  100% {
+    transform: rotate(360deg);
+  }
 }
