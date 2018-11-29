@@ -100,12 +100,12 @@ export default class ReactCodeInput extends Component {
         if (this.state.values[index]) {
           vals[index] = '';
           this.setState({ values: vals });
-          this.triggerChange();
+          this.triggerChange(vals);
         } else if (prev) {
           vals[prevIndex] = '';
           prev.current.focus();
           this.setState({ values: vals });
-          this.triggerChange();
+          this.triggerChange(vals);
         }
         break;
       case KEY_CODE.left:
