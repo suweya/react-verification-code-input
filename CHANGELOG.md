@@ -1,3 +1,14 @@
+#### 1.0.3 (2018-11-29)
+
+##### Documentation Changes
+
+*  update example (f4bc32b1)
+*  add live demo link (0e7d399e)
+
+##### Bug Fixes
+
+*  on backspace trigger onChange params (7664d7ad)
+
 #### 1.0.2 (2018-11-28)
 
 ##### New Features
