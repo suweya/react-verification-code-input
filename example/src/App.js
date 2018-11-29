@@ -8,13 +8,20 @@ const STYLE = {
 };
 
 export default class App extends Component {
+  handleChange = vals => {
+    if (vals.length >= 6) {
+      console.log('complete, ', vals);
+    } else if (vals.length === 0) {
+      console.log('empty, ', vals);
+    }
+  };
+
   render() {
     return (
       <div style={STYLE}>
         <ReactCodeInput
-          fields={5}
-          onChange={v => console.log(v)}
-          onComplete={v => console.log(`complete : ${v}`)}
+          onChange={this.handleChange}
+          onComplete={this.handleChange}
         />
       </div>
     );
