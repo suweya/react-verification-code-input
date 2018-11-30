@@ -22,7 +22,7 @@ export default class App extends Component {
         <ReactCodeInput
           className='custom-class'
           onChange={this.handleChange}
-          onComplete={this.handleChange}
+          onComplete={val => console.log('complete', val)}
         />
       </div>
     );

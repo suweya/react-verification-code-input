@@ -63,19 +63,26 @@ export default class ReactCodeInput extends Component {
       return;
     }
     const { fields } = this.props;
-    const nextIndex = index + 1;
-    const next = this.iRefs[nextIndex];
+    let next;
     const value = e.target.value;
     let { values } = this.state;
+    values = Object.assign([], values);
     if (value.length > 1) {
-      if (nextIndex < fields) {
-        const split = value.split('');
-        const last = split[split.length - 1];
-        values[nextIndex] = last;
-        this.setState({ values });
+      let nextIndex = value.length + index - 1;
+      if (nextIndex >= fields) {
+        nextIndex = fields - 1;
       }
+      next = this.iRefs[nextIndex];
+      const split = value.split('');
+      split.forEach((item, i) => {
+        const cursor = index + i;
+        if (cursor < fields) {
+          values[cursor] = item;
+        }
+      });
+      this.setState({ values });
     } else {
-      values = Object.assign([], values);
+      next = this.iRefs[index + 1];
       values[index] = value;
       this.setState({ values });
     }
