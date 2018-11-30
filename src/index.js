@@ -44,7 +44,7 @@ export default class ReactCodeInput extends Component {
     }
     this.id = +new Date();
 
-    this.handleKeys = Array(fields).fill(false);
+    // this.handleKeys = Array(fields).fill(false);
   }
 
   triggerChange = (values = this.state.values) => {
@@ -58,7 +58,7 @@ export default class ReactCodeInput extends Component {
 
   onChange = e => {
     const index = parseInt(e.target.dataset.id);
-    this.handleKeys[index] = false;
+    // this.handleKeys[index] = false;
     if (!e.target.validity.valid) {
       return;
     }
@@ -126,21 +126,21 @@ export default class ReactCodeInput extends Component {
         e.preventDefault();
         break;
       default:
-        this.handleKeys[index] = true;
+        // this.handleKeys[index] = true;
         break;
     }
   };
 
-  onKeyUp = e => {
-    const index = parseInt(e.target.dataset.id);
-    if (this.handleKeys[index]) {
-      this.handleKeys[index] = false;
-      const next = this.iRefs[index + 1];
-      if (next) {
-        next.current.focus();
-      }
-    }
-  };
+  // onKeyUp = e => {
+  //   const index = parseInt(e.target.dataset.id);
+  //   if (this.handleKeys[index]) {
+  //     this.handleKeys[index] = false;
+  //     const next = this.iRefs[index + 1];
+  //     if (next) {
+  //       next.current.focus();
+  //     }
+  //   }
+  // };
 
   onFocus = e => {
     e.target.select(e);
@@ -168,7 +168,10 @@ export default class ReactCodeInput extends Component {
       lineHeight: `${fieldHeight}px`
     };
     return (
-      <div className={`${styles['react-code-input-container']} ${className}`} style={ROOT_STYLE}>
+      <div
+        className={`${styles['react-code-input-container']} ${className}`}
+        style={ROOT_STYLE}
+      >
         {title && <p className={styles['title']}>{title}</p>}
         <div className={styles['react-code-input']}>
           {values.map((value, index) => (
@@ -183,7 +186,7 @@ export default class ReactCodeInput extends Component {
               ref={this.iRefs[index]}
               onChange={this.onChange}
               onKeyDown={this.onKeyDown}
-              onKeyUp={this.onKeyUp}
+              // onKeyUp={this.onKeyUp}
               onFocus={this.onFocus}
             />
           ))}
