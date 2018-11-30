@@ -42,6 +42,7 @@ class Example extends Component {
 |  autoFocus  |  bool  | auto focus first input on init  |
 |    title    | string |        code input title         |
 |   loading   |  bool  |        show loading flag        |
+|  className  | string |           class name            |
 
 ## License
 

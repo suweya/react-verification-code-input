@@ -20,6 +20,7 @@ export default class App extends Component {
     return (
       <div style={STYLE}>
         <ReactCodeInput
+          className='custom-class'
           onChange={this.handleChange}
           onComplete={this.handleChange}
         />

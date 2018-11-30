@@ -20,7 +20,8 @@ export default class ReactCodeInput extends Component {
     title: PropTypes.string,
     fieldWidth: PropTypes.number,
     fieldHeight: PropTypes.number,
-    autoFocus: PropTypes.bool
+    autoFocus: PropTypes.bool,
+    className: PropTypes.string
   };
 
   static defaultProps = {
@@ -153,7 +154,8 @@ export default class ReactCodeInput extends Component {
       fieldHeight,
       fieldWidth,
       fields,
-      autoFocus
+      autoFocus,
+      className
     } = this.props;
     const INPUT_STYLE = {
       width: fieldWidth,
@@ -166,7 +168,7 @@ export default class ReactCodeInput extends Component {
       lineHeight: `${fieldHeight}px`
     };
     return (
-      <div className={styles['react-code-input-container']} style={ROOT_STYLE}>
+      <div className={`${styles['react-code-input-container']} ${className}`} style={ROOT_STYLE}>
         {title && <p className={styles['title']}>{title}</p>}
         <div className={styles['react-code-input']}>
           {values.map((value, index) => (
