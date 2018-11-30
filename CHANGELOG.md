@@ -1,3 +1,13 @@
+#### 1.0.4 (2018-11-30)
+
+##### Documentation Changes
+
+*  update badge (1c1c0711)
+
+##### New Features
+
+*  add className props (0ad80c48)
+
 #### 1.0.3 (2018-11-29)
 
 ##### Documentation Changes
