@@ -8,9 +8,18 @@ const STYLE = {
 };
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.input = React.createRef();
+  }
+
   handleChange = vals => {
     if (vals.length >= 6) {
       console.log('complete, ', vals);
+      setTimeout(() => {
+        this.input.current.__clearvalues__();
+      }, 3000);
     } else if (vals.length === 0) {
       console.log('empty, ', vals);
     }
@@ -20,7 +29,8 @@ export default class App extends Component {
     return (
       <div style={STYLE}>
         <ReactCodeInput
-          className='custom-class'
+          ref={this.input}
+          className="custom-class"
           onChange={this.handleChange}
           onComplete={val => console.log('complete', val)}
         />

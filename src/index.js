@@ -47,6 +47,15 @@ export default class ReactCodeInput extends Component {
     // this.handleKeys = Array(fields).fill(false);
   }
 
+  /**
+   * Clear all field value & focus first field
+   */
+  __clearvalues__ = () => {
+    const { fields } = this.props;
+    this.setState({ values: Array(fields).fill('') });
+    this.iRefs[0].current.focus();
+  };
+
   triggerChange = (values = this.state.values) => {
     const { onChange, onComplete, fields } = this.props;
     const val = values.join('');
