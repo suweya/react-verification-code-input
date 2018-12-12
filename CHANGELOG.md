@@ -1,3 +1,10 @@
+### 1.1.0 (2018-12-12)
+
+##### New Features
+
+*  support text input (1bd276f6)
+*  support clear method (__clearvalues__) (2a5b8035)
+
 #### 1.0.5 (2018-11-30)
 
 ##### New Features
