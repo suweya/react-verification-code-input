@@ -17,9 +17,6 @@ export default class App extends Component {
   handleChange = vals => {
     if (vals.length >= 6) {
       console.log('complete, ', vals);
-      setTimeout(() => {
-        this.input.current.__clearvalues__();
-      }, 3000);
     } else if (vals.length === 0) {
       console.log('empty, ', vals);
     }
@@ -29,6 +26,7 @@ export default class App extends Component {
     return (
       <div style={STYLE}>
         <ReactCodeInput
+          type="text"
           ref={this.input}
           className="custom-class"
           onChange={this.handleChange}

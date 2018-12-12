@@ -13,6 +13,7 @@ const KEY_CODE = {
 
 export default class ReactCodeInput extends Component {
   static propTypes = {
+    type: PropTypes.oneOfType(['text', 'number']),
     onChange: PropTypes.func,
     onComplete: PropTypes.func,
     fields: PropTypes.number,
@@ -25,6 +26,7 @@ export default class ReactCodeInput extends Component {
   };
 
   static defaultProps = {
+    type: 'number',
     fields: 6,
     fieldWidth: 58,
     fieldHeight: 54,
@@ -68,7 +70,7 @@ export default class ReactCodeInput extends Component {
   onChange = e => {
     const index = parseInt(e.target.dataset.id);
     // this.handleKeys[index] = false;
-    if (!e.target.validity.valid) {
+    if (this.props.type === 'number' && !e.target.validity.valid) {
       return;
     }
     const { fields } = this.props;

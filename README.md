@@ -34,6 +34,7 @@ class Example extends Component {
 
 |     Key     |  Type  |              Desc               |
 | :---------: | :----: | :-----------------------------: |
+|    type     | number |      one of number or text      |
 |   fields    | number |     The count of characters     |
 |  onChange   |  func  |   Trigger on character change   |
 | onComplete  |  func  | Trigger on all character inputs |
