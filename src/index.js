@@ -13,7 +13,7 @@ const KEY_CODE = {
 
 export default class ReactCodeInput extends Component {
   static propTypes = {
-    type: PropTypes.oneOfType(['text', 'number']),
+    type: PropTypes.oneOf(['text', 'number']),
     onChange: PropTypes.func,
     onComplete: PropTypes.func,
     fields: PropTypes.number,
