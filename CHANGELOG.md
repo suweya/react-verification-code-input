@@ -1,3 +1,13 @@
+#### 1.1.1 (2018-12-19)
+
+##### Bug Fixes
+
+*  type(props) PropTypes define error (1e3d7cf4)
+
+##### Other Changes
+
+*  update (5dd0c48e)
+
 ### 1.1.0 (2018-12-12)
 
 ##### New Features
