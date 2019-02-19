@@ -38,8 +38,8 @@ class Example extends Component {
 |   fields    | number |     The count of characters     |
 |  onChange   |  func  |   Trigger on character change   |
 | onComplete  |  func  | Trigger on all character inputs |
-| filedWidth  | number |           input width           |
-| filedHeight | number |          input height           |
+| fieldWidth  | number |           input width           |
+| fieldHeight | number |          input height           |
 |  autoFocus  |  bool  | auto focus first input on init  |
 |    title    | string |        code input title         |
 |   loading   |  bool  |        show loading flag        |
