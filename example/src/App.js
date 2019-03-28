@@ -26,7 +26,6 @@ export default class App extends Component {
     return (
       <div style={STYLE}>
         <ReactCodeInput
-          type="text"
           ref={this.input}
           className="custom-class"
           onChange={this.handleChange}
