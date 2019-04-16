@@ -2599,6 +2599,15 @@ chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.4.1:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
+chalk@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
+  integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
+  dependencies:
+    ansi-styles "^3.2.1"
+    escape-string-regexp "^1.0.5"
+    supports-color "^5.3.0"
+
 chardet@^0.4.0:
   version "0.4.2"
   resolved "http://registry.npm.taobao.org/chardet/download/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
@@ -4627,6 +4636,15 @@ fs-extra@^5.0.0:
   version "5.0.0"
   resolved "http://registry.npm.taobao.org/fs-extra/download/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
   integrity sha1-QU0BEM3QZwVzTQVWUsVBEmDDGr0=
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -8595,6 +8613,15 @@ rollup-plugin-commonjs@^9.1.3:
     magic-string "^0.25.1"
     resolve "^1.8.1"
     rollup-pluginutils "^2.3.3"
+
+rollup-plugin-copy@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-copy/-/rollup-plugin-copy-1.1.0.tgz#bfcbfd6894634be720bfad9d03644c40a70b3b16"
+  integrity sha512-4QjLhJFcOFHjozhChjuXRymFgLYDb2cqUSZuIXbfMQo83xCxgSxYXEFDhsSstD/3NTTQzAKaRK9JAoUH8B3FbA==
+  dependencies:
+    chalk "^2.4.2"
+    fs-extra "^7.0.1"
+    is-plain-object "^2.0.4"
 
 rollup-plugin-node-resolve@^3.3.0:
   version "3.4.0"
