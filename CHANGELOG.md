@@ -1,3 +1,17 @@
+#### 1.1.2 (2019-04-16)
+
+##### Build System / Dependencies
+
+*  copy file plugin (1454e1c9)
+
+##### New Features
+
+*  add typescript define (05cee6ea)
+
+##### Bug Fixes
+
+*  ios safari style (fe4155c1)
+
 #### 1.1.1 (2018-12-19)
 
 ##### Bug Fixes
