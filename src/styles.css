@@ -12,6 +12,8 @@
   color: #525461;
   text-align: center;
   box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: initial;
 }
 
 .react-code-input > input:last-child {
