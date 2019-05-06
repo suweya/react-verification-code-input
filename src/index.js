@@ -69,6 +69,9 @@ export default class ReactCodeInput extends Component {
 
   onChange = e => {
     const index = parseInt(e.target.dataset.id);
+    if (this.props.type === 'number') {
+      e.target.value = e.target.value.replace(/[^\d]/ig,"");
+    }
     // this.handleKeys[index] = false;
     if (this.props.type === 'number' && !e.target.validity.valid) {
       return;
