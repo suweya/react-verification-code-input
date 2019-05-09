@@ -1,3 +1,9 @@
+### 1.2.0 (2019-05-09)
+
+##### New Features
+
+*  add default values (0bf90f13)
+
 #### 1.1.2 (2019-04-16)
 
 ##### Build System / Dependencies
