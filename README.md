@@ -44,6 +44,7 @@ class Example extends Component {
 |    title    | string |        code input title         |
 |   loading   |  bool  |        show loading flag        |
 |  className  | string |           class name            |
+|   values    | array  |         default values          |
 
 ## License
 

@@ -22,7 +22,8 @@ export default class ReactCodeInput extends Component {
     fieldWidth: PropTypes.number,
     fieldHeight: PropTypes.number,
     autoFocus: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    values: PropTypes.arrayOf(PropTypes.string)
   };
 
   static defaultProps = {
@@ -35,10 +36,19 @@ export default class ReactCodeInput extends Component {
 
   constructor(props) {
     super(props);
-    const { fields } = props;
-    this.state = {
-      values: Array(fields).fill('')
-    };
+    const { fields, values } = props;
+    let vals;
+    let autoFocusIndex = 0;
+    if (values && values.length) {
+      vals = [];
+      for (let i = 0; i < fields; i++) {
+        vals.push(values[i] || '');
+      }
+      autoFocusIndex = values.length >= fields ? 0 : values.length;
+    } else {
+      vals = Array(fields).fill('');
+    }
+    this.state = { values: vals, autoFocusIndex };
 
     this.iRefs = [];
     for (let i = 0; i < fields; i++) {
@@ -70,7 +80,7 @@ export default class ReactCodeInput extends Component {
   onChange = e => {
     const index = parseInt(e.target.dataset.id);
     if (this.props.type === 'number') {
-      e.target.value = e.target.value.replace(/[^\d]/ig,"");
+      e.target.value = e.target.value.replace(/[^\d]/gi, '');
     }
     // this.handleKeys[index] = false;
     if (this.props.type === 'number' && !e.target.validity.valid) {
@@ -168,7 +178,7 @@ export default class ReactCodeInput extends Component {
   };
 
   render() {
-    const { values } = this.state;
+    const { values, autoFocusIndex } = this.state;
     const {
       loading,
       title,
@@ -199,7 +209,7 @@ export default class ReactCodeInput extends Component {
             <input
               type="text"
               pattern="[0-9]*"
-              autoFocus={autoFocus && index === 0}
+              autoFocus={autoFocus && index === autoFocusIndex}
               style={INPUT_STYLE}
               key={`${this.id}-${index}`}
               data-id={index}
