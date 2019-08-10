@@ -186,7 +186,8 @@ export default class ReactCodeInput extends Component {
       fieldWidth,
       fields,
       autoFocus,
-      className
+      className,
+      type
     } = this.props;
     const INPUT_STYLE = {
       width: fieldWidth,
@@ -207,8 +208,8 @@ export default class ReactCodeInput extends Component {
         <div className={styles['react-code-input']}>
           {values.map((value, index) => (
             <input
-              type="text"
-              pattern="[0-9]*"
+              type={type}
+              pattern={type === 'number' ? '[0-9]*' : null}
               autoFocus={autoFocus && index === autoFocusIndex}
               style={INPUT_STYLE}
               key={`${this.id}-${index}`}
