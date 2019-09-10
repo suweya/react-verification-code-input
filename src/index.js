@@ -23,7 +23,9 @@ export default class ReactCodeInput extends Component {
     fieldHeight: PropTypes.number,
     autoFocus: PropTypes.bool,
     className: PropTypes.string,
-    values: PropTypes.arrayOf(PropTypes.string)
+    values: PropTypes.arrayOf(PropTypes.string),
+    disabled: PropTypes.bool,
+    required: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -31,7 +33,9 @@ export default class ReactCodeInput extends Component {
     fields: 6,
     fieldWidth: 58,
     fieldHeight: 54,
-    autoFocus: true
+    autoFocus: true,
+    disabled: false,
+    required: false
   };
 
   constructor(props) {
@@ -220,6 +224,8 @@ export default class ReactCodeInput extends Component {
               onKeyDown={this.onKeyDown}
               // onKeyUp={this.onKeyUp}
               onFocus={this.onFocus}
+              disabled={this.props.disabled}
+              required={this.props.required}
             />
           ))}
         </div>
