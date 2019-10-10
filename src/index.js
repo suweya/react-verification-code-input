@@ -83,7 +83,7 @@ export default class ReactCodeInput extends Component {
       e.target.value = e.target.value.replace(/[^\d]/gi, '');
     }
     // this.handleKeys[index] = false;
-    if (this.props.type === 'number' && !e.target.validity.valid) {
+    if (e.target.value === '' || (this.props.type === 'number' && !e.target.validity.valid)) {
       return;
     }
     const { fields } = this.props;
@@ -208,8 +208,8 @@ export default class ReactCodeInput extends Component {
         <div className={styles['react-code-input']}>
           {values.map((value, index) => (
             <input
-              type={type}
-              pattern={type === 'number' ? '[0-9]*' : null}
+              type={type === 'number' ? 'tel' : type}
+              pattern={type === 'number' ? '[0-9]' : null}
               autoFocus={autoFocus && index === autoFocusIndex}
               style={INPUT_STYLE}
               key={`${this.id}-${index}`}
