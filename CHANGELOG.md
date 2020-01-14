@@ -1,3 +1,10 @@
+#### 1.2.3 (2020-01-14)
+
+##### Bug Fixes
+
+*  input pattern miss * (ab6303cf)
+*  number input plus or minus sign (57317459)
+
 #### 1.2.1 (2019-08-10)
 
 ##### Bug Fixes
