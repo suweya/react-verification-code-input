@@ -25,7 +25,7 @@ export default class ReactCodeInput extends Component {
     className: PropTypes.string,
     values: PropTypes.arrayOf(PropTypes.string),
     disabled: PropTypes.bool,
-    required: PropTypes.bool,
+    required: PropTypes.bool
   };
 
   static defaultProps = {
@@ -87,7 +87,10 @@ export default class ReactCodeInput extends Component {
       e.target.value = e.target.value.replace(/[^\d]/gi, '');
     }
     // this.handleKeys[index] = false;
-    if (e.target.value === '' || (this.props.type === 'number' && !e.target.validity.valid)) {
+    if (
+      e.target.value === '' ||
+      (this.props.type === 'number' && !e.target.validity.valid)
+    ) {
       return;
     }
     const { fields } = this.props;
@@ -213,7 +216,7 @@ export default class ReactCodeInput extends Component {
           {values.map((value, index) => (
             <input
               type={type === 'number' ? 'tel' : type}
-              pattern={type === 'number' ? '[0-9]' : null}
+              pattern={type === 'number' ? '[0-9]*' : null}
               autoFocus={autoFocus && index === autoFocusIndex}
               style={INPUT_STYLE}
               key={`${this.id}-${index}`}
