@@ -45,6 +45,7 @@ class Example extends Component {
 |   loading   |  bool  |        show loading flag        |
 |  className  | string |           class name            |
 |   values    | array  |         default values          |
+| placeholder | array  |        input placeholder        |
 
 ## License
 

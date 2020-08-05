@@ -25,7 +25,8 @@ export default class ReactCodeInput extends Component {
     className: PropTypes.string,
     values: PropTypes.arrayOf(PropTypes.string),
     disabled: PropTypes.bool,
-    required: PropTypes.bool
+    required: PropTypes.bool,
+    placeholder: PropTypes.arrayOf(PropTypes.string)
   };
 
   static defaultProps = {
@@ -35,7 +36,8 @@ export default class ReactCodeInput extends Component {
     fieldHeight: 54,
     autoFocus: true,
     disabled: false,
-    required: false
+    required: false,
+    placeholder: []
   };
 
   constructor(props) {
@@ -229,6 +231,7 @@ export default class ReactCodeInput extends Component {
               onFocus={this.onFocus}
               disabled={this.props.disabled}
               required={this.props.required}
+              placeholder={this.props.placeholder[index]}
             />
           ))}
         </div>

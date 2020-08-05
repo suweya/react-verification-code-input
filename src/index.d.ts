@@ -12,6 +12,7 @@ interface ReactCodeInputProps {
   values?: string[];
   disabled?: boolean;
   required?: boolean;
+  placeholder?: string[];
 }
 
 declare const ReactCodeInput: React.ComponentClass<ReactCodeInputProps>
