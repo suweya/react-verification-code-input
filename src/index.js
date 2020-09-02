@@ -20,6 +20,7 @@ export default class ReactCodeInput extends Component {
     loading: PropTypes.bool,
     title: PropTypes.string,
     fieldWidth: PropTypes.number,
+    id: PropTypes.string,
     fieldHeight: PropTypes.number,
     autoFocus: PropTypes.bool,
     className: PropTypes.string,
@@ -224,6 +225,7 @@ export default class ReactCodeInput extends Component {
               key={`${this.id}-${index}`}
               data-id={index}
               value={value}
+              id={this.props.id ? `${this.props.id}-${index}` : null}
               ref={this.iRefs[index]}
               onChange={this.onChange}
               onKeyDown={this.onKeyDown}
