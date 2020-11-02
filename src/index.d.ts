@@ -15,6 +15,8 @@ interface ReactCodeInputProps {
   placeholder?: string[];
 }
 
-declare const ReactCodeInput: React.ComponentClass<ReactCodeInputProps>
+declare const ReactCodeInput: React.ComponentClass<ReactCodeInputProps> {
+  __clearvalues__ : () => void;
+}
 
 export default ReactCodeInput;
