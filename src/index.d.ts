@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface ReactCodeInputProps {
   type?: 'text' | 'number';
   onChange?: (val: string) => void;
