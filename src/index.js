@@ -43,18 +43,8 @@ export default class ReactCodeInput extends Component {
 
   constructor(props) {
     super(props);
-    const { fields, values } = props;
-    let vals;
-    let autoFocusIndex = 0;
-    if (values && values.length) {
-      vals = [];
-      for (let i = 0; i < fields; i++) {
-        vals.push(values[i] || '');
-      }
-      autoFocusIndex = values.length >= fields ? 0 : values.length;
-    } else {
-      vals = Array(fields).fill('');
-    }
+    const { fields } = props;
+    const { vals, autoFocusIndex } = this.updateValues();
     this.state = { values: vals, autoFocusIndex };
 
     this.iRefs = [];
@@ -64,6 +54,42 @@ export default class ReactCodeInput extends Component {
     this.id = +new Date();
 
     // this.handleKeys = Array(fields).fill(false);
+  }
+
+  updateValues = () => {
+    const { fields, values } = this.props;
+    let autoFocusIndex = 0;
+    let vals;
+
+    if (values && values.length) {
+      vals = [];
+      for (let i = 0; i < fields; i++) {
+        vals.push(values[i] || '');
+      }
+      autoFocusIndex = values.length >= fields ? 0 : values.length;
+    } else {
+      vals = Array(fields).fill('');
+    }
+
+    return { vals, autoFocusIndex }
+  };
+
+  checkDifferenceArray = (prev, curr) => {
+    return !Array.isArray(prev) || !Array.isArray(curr) ||
+      prev.length !== curr.length ||
+      JSON.stringify(prev) !== JSON.stringify(curr);
+  };
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const { values } = prevProps;
+
+    if (
+      (Array.isArray(values) && this.checkDifferenceArray(values, this.props.values)) ||
+      (values !== this.props.values)
+    ) {
+      const { vals, autoFocusIndex } = this.updateValues();
+      this.setState({ values: vals, autoFocusIndex });
+    }
   }
 
   /**
