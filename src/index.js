@@ -55,7 +55,11 @@ export default class ReactCodeInput extends Component {
     } else {
       vals = Array(fields).fill('');
     }
-    this.state = { values: vals, autoFocusIndex };
+    this.state = {
+      completed: false,
+      values: vals,
+      autoFocusIndex
+    };
 
     this.iRefs = [];
     for (let i = 0; i < fields; i++) {
@@ -71,15 +75,17 @@ export default class ReactCodeInput extends Component {
    */
   __clearvalues__ = () => {
     const { fields } = this.props;
-    this.setState({ values: Array(fields).fill('') });
+    this.setState({ values: Array(fields).fill(''), completed: false });
     this.iRefs[0].current.focus();
   };
 
   triggerChange = (values = this.state.values) => {
+    const { completed } = this.state;
     const { onChange, onComplete, fields } = this.props;
     const val = values.join('');
     onChange && onChange(val);
-    if (onComplete && val.length >= fields) {
+    if (!completed && onComplete && val.length === fields) {
+      this.setState(s => ({ ...s, completed: true }));
       onComplete(val);
     }
   };
@@ -114,11 +120,11 @@ export default class ReactCodeInput extends Component {
           values[cursor] = item;
         }
       });
-      this.setState({ values });
+      this.setState(s => ({ ...s, values }));
     } else {
       next = this.iRefs[index + 1];
       values[index] = value;
-      this.setState({ values });
+      this.setState(s => ({ ...s, values }));
     }
 
     if (next) {
@@ -141,14 +147,20 @@ export default class ReactCodeInput extends Component {
         const vals = [...this.state.values];
         if (this.state.values[index]) {
           vals[index] = '';
-          this.setState({ values: vals });
+          this.setState(s => ({ ...s, values: vals }));
           this.triggerChange(vals);
         } else if (prev) {
           vals[prevIndex] = '';
           prev.current.focus();
-          this.setState({ values: vals });
+          this.setState(s => ({ ...s, values: vals }));
           this.triggerChange(vals);
         }
+
+        // verify if completed is true to change value.
+        if (this.state.completed) {
+          this.setState(s => ({ ...s, completed: false }));
+        }
+
         break;
       case KEY_CODE.left:
         e.preventDefault();
