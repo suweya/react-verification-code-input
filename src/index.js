@@ -19,7 +19,10 @@ export default class ReactCodeInput extends Component {
     fields: PropTypes.number,
     loading: PropTypes.bool,
     title: PropTypes.string,
-    fieldWidth: PropTypes.number,
+    fieldWidth: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+    ]),
     id: PropTypes.string,
     fieldHeight: PropTypes.number,
     autoFocus: PropTypes.bool,
@@ -204,7 +207,7 @@ export default class ReactCodeInput extends Component {
       height: fieldHeight
     };
     const ROOT_STYLE = {
-      width: fields * fieldWidth
+      width: (fields * fieldWidth) || "auto"
     };
     const LOADING_STYLE = {
       lineHeight: `${fieldHeight}px`
