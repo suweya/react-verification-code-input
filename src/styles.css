@@ -4,6 +4,11 @@
   position: relative;
 }
 
+.react-code-input {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .react-code-input > input {
   border: solid 1px #a8adb7;
   border-right: none;
@@ -14,6 +19,9 @@
   box-sizing: border-box;
   border-radius: 0;
   -webkit-appearance: initial;
+  flex: 1 0 0%;
+  width: 100%;
+  max-width: 100%;
 }
 
 .react-code-input > input:last-child {

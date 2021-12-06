@@ -32,20 +32,25 @@ class Example extends Component {
 
 ## PropTypes
 
-|     Key     |  Type  |              Desc               |
-| :---------: | :----: | :-----------------------------: |
-|    type     |  text  |      one of number or text      |
-|   fields    | number |     The count of characters     |
-|  onChange   |  func  |   Trigger on character change   |
-| onComplete  |  func  | Trigger on all character inputs |
-| fieldWidth  | number |           input width           |
-| fieldHeight | number |          input height           |
-|  autoFocus  |  bool  | auto focus first input on init  |
-|    title    | string |        code input title         |
-|   loading   |  bool  |        show loading flag        |
-|  className  | string |           class name            |
-|   values    | array  |         default values          |
-| placeholder | array  |        input placeholder        |
+|     Key          |  Type                   | Default value | Desc                                                                                            |
+| :--------------: | :---------------------: | :-----------: | :---------------------------------------------------------------------------------------------: |
+| type             | `'text' | 'number'`     | `'number'`    | one of 'number' or 'text'                                                                       |
+| fields           | `number`                | `6`           | The count of characters                                                                         |
+| onChange         | `(val: string) => void` | `undefined`   | Trigger on character change                                                                     |
+| onComplete       | `(val: string) => void` | `undefined`   | Trigger on all character inputs                                                                 |
+| autoFocus        | `boolean`               | `true`        | auto focus first input on init                                                                  |
+| title            | `string`                | `undefined`   | code input title                                                                                |
+| loading          | `boolean`               | ''            | show loading flag                                                                               |
+| className        | `string`                | `undefined`   | wrapper class name                                                                              |
+| values           | `string | string[]`     | `undefined`   | default values                                                                                  |
+| placeholder      | `string | string[]`     | `[]`          | input placeholder. If `string`, the one placeholder will be added to all inputs                 |
+|                  |                         |               |                                                                                                 |
+| inputClassNames  | `string | string[]`     | `[]`          | input classnames. If `string`, the one class will be added to all inputs                        |
+| disabled         | `boolean`               | `false`       | disables all inputs                                                                             |
+| required         | `boolean`               | `false`       | sets all inputs to be required                                                                  |
+| id               | `string`                | `undefined`   | adds id prefix to all inputs. If `id` is not defined, id of each input won]'t be befined either |
+| loadingComponent | `JSX.Element`           | `Loader`      | custom loader component                                                                         |
+| :--------------: | :---------------------: | :-----------: | :---------------------------------------------------------------------------------------------: |
 
 ## License
 

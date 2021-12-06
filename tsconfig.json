@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "module": "esnext",
+    "declaration": true,
+    "declarationDir": "dist",
+    "lib": ["dom", "es2019", "es2021"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "typeRoots": ["node_modules/@types", "src/types.d.ts", "src/index.d.ts"],
+    "skipLibCheck": true,
+    "plugins": [{
+      "name": "typescript-plugin-css-modules",
+      "options": {
+        "customMatcher": "\\.css$",
+        "dotenvOptions": {},
+        "postcssOptions": {},
+        "rendererOptions": {}
+      }
+    }]
+  }
+}
