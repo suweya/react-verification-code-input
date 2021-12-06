@@ -43,7 +43,7 @@ const Example = () => <ReactCodeInput />;
 | inputClassNames  | `string \| string[]`    | `[]`          | input classnames. If `string`, the one class will be added to all inputs                        |
 | disabled         | `boolean`               | `false`       | disables all inputs                                                                             |
 | required         | `boolean`               | `false`       | sets all inputs to be required                                                                  |
-| id               | `string`                | `undefined`   | adds id prefix to all inputs. If `id` is not defined, id of each input won]'t be befined either |
+| id               | `string`                | `undefined`   | adds id prefix to all inputs. If `id` is not defined, id of each input won't be defined either |
 | loadingComponent | `JSX.Element`           | `Loader`      | custom loader component                                                                         |
 
 ## Methods
