@@ -13,8 +13,9 @@
     "npm": ">=5"
   },
   "scripts": {
-    "test": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "test": "cross-env CI=1 jest --testResultsProcessor ./node_modules/jest-sonar-reporter",
+    "test:watch": "jest --watch --testResultsProcessor ./node_modules/jest-sonar-reporter",
+    "test:coverage": "jest --coverage --watchAll=false --colors --testResultsProcessor ./node_modules/jest-sonar-reporter",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",

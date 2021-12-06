@@ -79,7 +79,7 @@ const ReactCodeInput = React.forwardRef<
       fields = 6,
       autoFocus = true,
       title,
-      loadingComponent = Loading
+      loadingComponent = <Loading />
     },
     ref
   ) => {

@@ -1,0 +1,27 @@
+<testExecutions version="1">
+<file path="src/test.tsx">
+<testCase name="&lt;ReactCodeInput /&gt; tests should render &lt;ReactCodeInput /&gt; and change focus" duration="50" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should set the number of inputs" duration="5" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should call onComplete" duration="16" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should call clearValues" duration="15" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should set some values and split it into chunks" duration="4" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should split long values" duration="7" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should stay focused on the last input if the value length is bigger than a number of inputs" duration="6" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should not change the focus if the value is empty" duration="6" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should change the focus on keyDown" duration="9" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should delete value and set focus to the previous field on backspace" duration="7" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should delete value and set focus to the previous field on backspace 2" duration="4" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should show loading component" duration="5" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs with IDs" duration="4" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs as a &quot;number&quot; type" duration="3" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs as a &quot;text&quot; type" duration="3" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs as a required" duration="2" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs as a disabled" duration="2" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs with placeholders" duration="3" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs with a placeholder (string)" duration="4" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs with classes" duration="4" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should render inputs with class (string)" duration="3" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should set autoFocus" duration="2" />
+<testCase name="&lt;ReactCodeInput /&gt; tests should not set autoFocus" duration="3" />
+</file>
+</testExecutions>

@@ -30,11 +30,9 @@ module.exports = {
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
   testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.tsx?$": ["ts-jest"],
-    "^.+\\.svg$": "<rootDir>/mocks/svg-transform.js"
+    "^.+\\.tsx?$": ["ts-jest"]
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  setupFiles: ['<rootDir>/mocks/setup-tests.js'],
   setupFilesAfterEnv: [
     "@testing-library/jest-dom/extend-expect"
   ],
