@@ -19,15 +19,11 @@ npm install --save react-verification-code-input
 ## Usage
 
 ```jsx
-import React, { Component } from 'react';
+import React from 'react';
 
 import ReactCodeInput from 'react-verification-code-input';
 
-class Example extends Component {
-  render() {
-    return <ReactCodeInput />;
-  }
-}
+const Example = <ReactCodeInput />;
 ```
 
 ## PropTypes
