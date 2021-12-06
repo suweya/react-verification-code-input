@@ -49,7 +49,6 @@ class Example extends Component {
 | required         | `boolean`               | `false`       | sets all inputs to be required                                                                  |
 | id               | `string`                | `undefined`   | adds id prefix to all inputs. If `id` is not defined, id of each input won]'t be befined either |
 | loadingComponent | `JSX.Element`           | `Loader`      | custom loader component                                                                         |
-| :--------------: | :---------------------: | :-----------: | :---------------------------------------------------------------------------------------------: |
 
 ## License
 
