@@ -9,6 +9,9 @@ build
 dist
 .rpt2_cache
 
+# Coverage directory used by tools like istanbul
+coverage
+
 # misc
 .DS_Store
 .env
