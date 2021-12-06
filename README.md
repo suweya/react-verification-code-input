@@ -40,7 +40,7 @@ class Example extends Component {
 | onComplete       | `(val: string) => void` | `undefined`   | Trigger on all character inputs                                                                 |
 | autoFocus        | `boolean`               | `true`        | auto focus first input on init                                                                  |
 | title            | `string`                | `undefined`   | code input title                                                                                |
-| loading          | `boolean`               | ''            | show loading flag                                                                               |
+| loading          | `boolean`               | `''`          | show loading flag                                                                               |
 | className        | `string`                | `undefined`   | wrapper class name                                                                              |
 | values           | `string \| string[]`    | `undefined`   | default values                                                                                  |
 | placeholder      | `string \| string[]`    | `[]`          | input placeholder. If `string`, the one placeholder will be added to all inputs                 |
