@@ -23,12 +23,12 @@ import React from 'react';
 
 import ReactCodeInput from 'react-verification-code-input';
 
-const Example = <ReactCodeInput />;
+const Example = () => <ReactCodeInput />;
 ```
 
 ## PropTypes
 
-|     Key          |  Type                   | Default value | Desc                                                                                            |
+| Key              |  Type                   | Default value | Desc                                                                                            |
 | :--------------: | :---------------------: | :-----------: | :---------------------------------------------------------------------------------------------: |
 | type             | `'text' \| 'number'`    | `'number'`    | one of 'number' or 'text'                                                                       |
 | fields           | `number`                | `6`           | The count of characters                                                                         |
@@ -45,6 +45,32 @@ const Example = <ReactCodeInput />;
 | required         | `boolean`               | `false`       | sets all inputs to be required                                                                  |
 | id               | `string`                | `undefined`   | adds id prefix to all inputs. If `id` is not defined, id of each input won]'t be befined either |
 | loadingComponent | `JSX.Element`           | `Loader`      | custom loader component                                                                         |
+
+## Methods
+You can add `ref` to `ReactCodeInput` component to get access to methods
+
+| Method           | Description                           |
+| :--------------: | :-----------------------------------: |
+| clearValues      | Will clear all inputs                 |
+
+```jsx
+import React from 'react';
+
+import ReactCodeInput from 'react-verification-code-input';
+
+const Example = () => {
+  const codeInput = useRef(null);
+
+  return (
+    <>
+      <button type="button" onClick={() => codeInput.current.clearValues()}>
+        Clean code input
+      </button>
+      <ReactCodeInput ref={codeInput} />
+    </>
+  );
+};
+```
 
 ## License
 
