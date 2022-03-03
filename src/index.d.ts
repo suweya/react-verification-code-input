@@ -4,6 +4,7 @@ interface ReactCodeInputProps {
   type?: 'text' | 'number';
   onChange?: (val: string) => void;
   onComplete?: (val: string) => void;
+  onFocus?: () => void;
   fields?: number;
   loading?: boolean;
   title?: string;
@@ -18,7 +19,7 @@ interface ReactCodeInputProps {
 }
 
 declare class ReactCodeInput extends React.Component<ReactCodeInputProps> {
-  __clearvalues__ : () => void;
+  __clearvalues__: () => void;
 }
 
 export default ReactCodeInput;

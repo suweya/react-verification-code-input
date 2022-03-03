@@ -38,6 +38,7 @@ class Example extends Component {
 |   fields    | number |     The count of characters     |
 |  onChange   |  func  |   Trigger on character change   |
 | onComplete  |  func  | Trigger on all character inputs |
+|  onFocus    |  func  |   Trigger on input focus        |
 | fieldWidth  | number |           input width           |
 | fieldHeight | number |          input height           |
 |  autoFocus  |  bool  | auto focus first input on init  |

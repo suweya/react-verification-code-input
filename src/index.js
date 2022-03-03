@@ -16,6 +16,7 @@ export default class ReactCodeInput extends Component {
     type: PropTypes.oneOf(['text', 'number']),
     onChange: PropTypes.func,
     onComplete: PropTypes.func,
+    onFocus: PropTypes.func,
     fields: PropTypes.number,
     loading: PropTypes.bool,
     title: PropTypes.string,
@@ -82,6 +83,11 @@ export default class ReactCodeInput extends Component {
     if (onComplete && val.length >= fields) {
       onComplete(val);
     }
+  };
+
+  triggerFocus = () => {
+    const { onFocus } = this.props;
+    onFocus && onFocus();
   };
 
   onChange = e => {
@@ -185,6 +191,7 @@ export default class ReactCodeInput extends Component {
 
   onFocus = e => {
     e.target.select(e);
+    this.triggerFocus()
   };
 
   render() {
